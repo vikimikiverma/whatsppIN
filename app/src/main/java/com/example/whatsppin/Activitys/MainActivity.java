@@ -1,4 +1,4 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Activitys;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.whatsppin.R;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"OTP is Sent",Toast.LENGTH_SHORT).show();
                 mprogressbarofmain.setVisibility(View.INVISIBLE);
                 codesent=s;
-                Intent intent=new Intent(MainActivity.this,OtpAuthentication.class);
+                Intent intent=new Intent(MainActivity.this, OtpAuthenticationActivity.class);
                 intent.putExtra("otp",codesent);
                 startActivity(intent);
             }

@@ -1,12 +1,12 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Models;
 
-public class userProfile {
+public class userProfileModel {
     public String username,userUID;
 
-    public userProfile() {
+    public userProfileModel() {
     }
 
-    public userProfile(String username, String userUID) {
+    public userProfileModel(String username, String userUID) {
         this.username = username;
         this.userUID = userUID;
     }

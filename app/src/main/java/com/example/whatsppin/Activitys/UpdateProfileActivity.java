@@ -1,4 +1,4 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Activitys;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.whatsppin.R;
+import com.example.whatsppin.Models.userProfileModel;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,7 +36,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class UpdateProfile extends AppCompatActivity {
+public class UpdateProfileActivity extends AppCompatActivity {
     private  EditText mnewusername;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -96,26 +98,26 @@ public class UpdateProfile extends AppCompatActivity {
                 else if(imagepath!=null)
                 {
                     mprogressbarofupdateprofile.setVisibility(View.VISIBLE);
-                    userProfile muserprofile =new userProfile(newname,firebaseAuth.getUid());
+                    userProfileModel muserprofile =new userProfileModel(newname,firebaseAuth.getUid());
                     databaseReference.setValue(muserprofile);
 
                     updateimagetostorage();
 
                     Toast.makeText(getApplicationContext(),"Updated",Toast.LENGTH_SHORT).show();
                     mprogressbarofupdateprofile.setVisibility(View.INVISIBLE);
-                    Intent intent=new Intent(UpdateProfile.this,ChatActivity.class);
+                    Intent intent=new Intent(UpdateProfileActivity.this, ChatActivity.class);
                     startActivity(intent);
                     finish();
 
                 }
                 else {
                     mprogressbarofupdateprofile.setVisibility(View.VISIBLE);
-                    userProfile muserprofile =new userProfile(newname,firebaseAuth.getUid());
+                    userProfileModel muserprofile =new userProfileModel(newname,firebaseAuth.getUid());
                     databaseReference.setValue(muserprofile);
                     updatenameoncloudfirestore();
                     Toast.makeText(getApplicationContext(),"Updated",Toast.LENGTH_SHORT).show();
                     mprogressbarofupdateprofile.setVisibility(View.INVISIBLE);
-                    Intent intent=new Intent(UpdateProfile.this,ChatActivity.class);
+                    Intent intent=new Intent(UpdateProfileActivity.this,ChatActivity.class);
                     startActivity(intent);
                     finish();
                 }

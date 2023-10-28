@@ -1,18 +1,15 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -20,6 +17,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.whatsppin.Adapters.MessagesAdapter;
+import com.example.whatsppin.Models.MessagesModel;
+import com.example.whatsppin.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class specificchat extends AppCompatActivity {
+public class specificchatActivity extends AppCompatActivity {
 
     EditText mgetmessage;
     ImageButton msendmessagebutton;
@@ -61,7 +61,7 @@ public class specificchat extends AppCompatActivity {
     SimpleDateFormat simpleDateFormat;
 
     MessagesAdapter messagesAdapter;
-    ArrayList<Messages> messagesArrayList;
+    ArrayList<MessagesModel> messagesArrayList;
 
 
 
@@ -84,7 +84,7 @@ public class specificchat extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
         mmessagerecyclerview.setLayoutManager(linearLayoutManager);
-        messagesAdapter=new MessagesAdapter(specificchat.this,messagesArrayList);
+        messagesAdapter=new MessagesAdapter(specificchatActivity.this,messagesArrayList);
         mmessagerecyclerview.setAdapter(messagesAdapter);
 
 
@@ -120,14 +120,14 @@ public class specificchat extends AppCompatActivity {
 
 
         DatabaseReference databaseReference=firebaseDatabase.getReference().child("chats").child(senderroom).child("messages");
-        messagesAdapter=new MessagesAdapter(specificchat.this,messagesArrayList);
+        messagesAdapter=new MessagesAdapter(specificchatActivity.this,messagesArrayList);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 messagesArrayList.clear();
                 for(DataSnapshot snapshot1:snapshot.getChildren())
                 {
-                    Messages messages=snapshot1.getValue(Messages.class);
+                    MessagesModel messages=snapshot1.getValue(MessagesModel.class);
                     messagesArrayList.add(messages);
                 }
                 messagesAdapter.notifyDataSetChanged();
@@ -177,7 +177,7 @@ public class specificchat extends AppCompatActivity {
                 {
                     Date date=new Date();
                     currenttime=simpleDateFormat.format(calendar.getTime());
-                    Messages messages=new Messages(enteredmessage,firebaseAuth.getUid(),date.getTime(),currenttime);
+                    MessagesModel messages=new MessagesModel(enteredmessage,firebaseAuth.getUid(),date.getTime(),currenttime);
                     firebaseDatabase=FirebaseDatabase.getInstance();
                     firebaseDatabase.getReference().child("chats")
                             .child(senderroom)

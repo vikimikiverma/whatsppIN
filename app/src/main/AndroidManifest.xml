@@ -12,28 +12,28 @@
         android:theme="@style/Theme.WhatsppIN"
         tools:targetApi="31">
         <activity
-            android:name=".SettingActivity"
+            android:name=".Activitys.SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".specificchat"
+            android:name=".Activitys.specificchatActivity"
             android:exported="false" />
         <activity
-            android:name=".UpdateProfile"
+            android:name=".Activitys.UpdateProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".Activitys.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ChatActivity"
+            android:name=".Activitys.ChatActivity"
             android:exported="false" />
         <activity
-            android:name=".SetProfile"
+            android:name=".Activitys.SetProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".OtpAuthentication"
+            android:name=".Activitys.OtpAuthenticationActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".Activitys.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,7 +42,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activitys.MainActivity"
             android:exported="false" />
     </application>
 

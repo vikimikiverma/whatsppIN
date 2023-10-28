@@ -1,4 +1,4 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Adapters;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,18 +8,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.whatsppin.Models.MessagesModel;
+import com.example.whatsppin.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
 public class MessagesAdapter extends RecyclerView.Adapter  {
     Context context;
-    ArrayList<Messages> messagesArrayList;
+    ArrayList<MessagesModel> messagesArrayList;
 
     int ITEM_SEND=1;
     int ITEM_RECIEVE=2;
 
-    public MessagesAdapter(Context context, ArrayList<Messages> messagesArrayList) {
+    public MessagesAdapter(Context context, ArrayList<MessagesModel> messagesArrayList) {
         this.context = context;
         this.messagesArrayList = messagesArrayList;
     }
@@ -42,7 +44,7 @@ public class MessagesAdapter extends RecyclerView.Adapter  {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-        Messages messages=messagesArrayList.get(position);
+        MessagesModel messages=messagesArrayList.get(position);
         if(holder.getClass()==SenderViewHolder.class)
         {
             SenderViewHolder viewHolder=(SenderViewHolder)holder;
@@ -68,7 +70,7 @@ public class MessagesAdapter extends RecyclerView.Adapter  {
 
     @Override
     public int getItemViewType(int position) {
-        Messages messages=messagesArrayList.get(position);
+        MessagesModel messages=messagesArrayList.get(position);
         if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals(messages.getSenderId()))
 
         {

@@ -1,4 +1,4 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Activitys;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,7 +6,6 @@ import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -15,14 +14,14 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.whatsppin.R;
+import com.example.whatsppin.Adapters.pagerAdapter;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.Objects;
 
 public class ChatActivity extends AppCompatActivity {
     TabLayout tabLayout;
@@ -101,12 +100,12 @@ public class ChatActivity extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.profile:
-                Intent intent=new Intent(ChatActivity.this,ProfileActivity.class);
+                Intent intent=new Intent(ChatActivity.this, ProfileActivity.class);
                 startActivity(intent);
                 break;
 
             case R.id.settings:
-                Intent intentt = new Intent(ChatActivity.this,SettingActivity.class);
+                Intent intentt = new Intent(ChatActivity.this, SettingActivity.class);
                 break;
         }
 

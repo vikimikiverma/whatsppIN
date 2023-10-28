@@ -1,4 +1,4 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Activitys;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.whatsppin.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -19,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
-public class OtpAuthentication extends AppCompatActivity {
+public class OtpAuthenticationActivity extends AppCompatActivity {
 
     TextView mchangenumber;
     EditText mgetotp;
@@ -43,7 +44,7 @@ public class OtpAuthentication extends AppCompatActivity {
         mchangenumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OtpAuthentication.this, MainActivity.class);
+                Intent intent = new Intent(OtpAuthenticationActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -71,7 +72,7 @@ public class OtpAuthentication extends AppCompatActivity {
                 if(task.isSuccessful()){
                     mprogressbarofotpauth.setVisibility(View.INVISIBLE);
                     Toast.makeText(getApplicationContext(),"Login sucess",Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(OtpAuthentication.this,SetProfile.class);
+                    Intent intent=new Intent(OtpAuthenticationActivity.this, SetProfileActivity.class);
                     startActivity(intent);
                     finish();
                 }else{

@@ -1,4 +1,4 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Activitys;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.whatsppin.R;
+import com.example.whatsppin.Models.userProfileModel;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -84,7 +86,7 @@ public class ProfileActivity extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                userProfile muserprofile=snapshot.getValue(userProfile.class);
+                userProfileModel muserprofile=snapshot.getValue(userProfileModel.class);
                 mviewusername.setText(muserprofile.getUsername());
             }
 
@@ -98,7 +100,7 @@ public class ProfileActivity extends AppCompatActivity {
         mmovetoupdateprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(ProfileActivity.this,UpdateProfile.class);
+                Intent intent=new Intent(ProfileActivity.this, UpdateProfileActivity.class);
                 intent.putExtra("nameofuser",mviewusername.getText().toString());
                 startActivity(intent);
             }

@@ -1,4 +1,4 @@
-package com.example.whatsppin;
+package com.example.whatsppin.fragments;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,6 +15,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.whatsppin.R;
+import com.example.whatsppin.Models.firebasemodel;
+import com.example.whatsppin.Activitys.specificchatActivity;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -68,7 +71,7 @@ public class chatfragment extends Fragment {
                 noteViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent=new Intent(getActivity(),specificchat.class);
+                        Intent intent=new Intent(getActivity(), specificchatActivity.class);
                         intent.putExtra("name",firebasemodel.getName());
                         intent.putExtra("receiveruid",firebasemodel.getUid());
                         intent.putExtra("imageuri",firebasemodel.getImage());

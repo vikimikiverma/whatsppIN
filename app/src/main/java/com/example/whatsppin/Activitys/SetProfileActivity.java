@@ -1,4 +1,4 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Activitys;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.whatsppin.R;
+import com.example.whatsppin.Models.userProfileModel;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,7 +35,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class SetProfile extends AppCompatActivity {
+public class SetProfileActivity extends AppCompatActivity {
     private CardView mgetuserimage;
     private ImageView mgetuserimageinimageview;
     private static final int PICK_IMAGE=123;
@@ -92,7 +94,7 @@ public class SetProfile extends AppCompatActivity {
                     mprogressbarofsetprofile.setVisibility(View.VISIBLE);
                     sendDataForNewUser();
                     mprogressbarofsetprofile.setVisibility(View.INVISIBLE);
-                    Intent intent=new Intent(SetProfile.this,ChatActivity.class);
+                    Intent intent=new Intent(SetProfileActivity.this, ChatActivity.class);
                     startActivity(intent);
                     finish();
                 }
@@ -108,7 +110,7 @@ public class SetProfile extends AppCompatActivity {
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
         DatabaseReference databaseReference=firebaseDatabase.getReference(Objects.requireNonNull(firebaseAuth.getUid()));
 
-        userProfile muserprofile=new userProfile(name,firebaseAuth.getUid());
+        userProfileModel muserprofile=new userProfileModel(name,firebaseAuth.getUid());
         databaseReference.setValue(muserprofile);
         Toast.makeText(getApplicationContext(),"User Profile Added Successfully",Toast.LENGTH_SHORT).show();
         sendImagetoStorage();

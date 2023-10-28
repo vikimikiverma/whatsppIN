@@ -1,4 +1,4 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Models;
 
 public class firebasemodel {
     String name;

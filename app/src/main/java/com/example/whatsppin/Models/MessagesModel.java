@@ -1,16 +1,16 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Models;
 
-public class Messages {
+public class MessagesModel {
     String message;
     String senderId;
     long timestamp;
     String currenttime;
 
 
-    public Messages() {
+    public MessagesModel() {
     }
 
-    public Messages(String message, String senderId, long timestamp, String currenttime) {
+    public MessagesModel(String message, String senderId, long timestamp, String currenttime) {
         this.message = message;
         this.senderId = senderId;
         this.timestamp = timestamp;

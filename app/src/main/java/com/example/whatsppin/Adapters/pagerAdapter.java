@@ -1,9 +1,13 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+
+import com.example.whatsppin.fragments.callFragment;
+import com.example.whatsppin.fragments.chatfragment;
+import com.example.whatsppin.fragments.statusfragment;
 
 public class pagerAdapter extends FragmentStatePagerAdapter {
 

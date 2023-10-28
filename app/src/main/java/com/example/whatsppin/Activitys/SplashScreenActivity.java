@@ -1,4 +1,4 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
-public class SplashScreen extends AppCompatActivity {
+import com.example.whatsppin.R;
+
+public class SplashScreenActivity extends AppCompatActivity {
     private static int SPLASH_TIMER=3000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,7 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent intent=new Intent(SplashScreen.this,MainActivity.class);
+                Intent intent=new Intent(SplashScreenActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
 

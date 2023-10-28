@@ -1,8 +1,10 @@
-package com.example.whatsppin;
+package com.example.whatsppin.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.whatsppin.R;
 
 public class SettingActivity extends AppCompatActivity {
 
