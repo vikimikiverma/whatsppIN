@@ -106,7 +106,7 @@ public class ChatActivity extends AppCompatActivity {
                 break;
 
             case R.id.settings:
-                Toast.makeText(getApplicationContext(),"Settign is clicked",Toast.LENGTH_SHORT).show();
+                Intent intentt = new Intent(ChatActivity.this,SettingActivity.class);
                 break;
         }
 
