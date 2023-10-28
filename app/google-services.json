@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "485617582756",
+    "project_id": "whatsappin-321fe",
+    "storage_bucket": "whatsappin-321fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485617582756:android:687f6b754dc08a46c35c31",
+        "android_client_info": {
+          "package_name": "com.example.whatsppin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ7R_k8TYPREN9llOfXSrH_pWAUMaQaPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
